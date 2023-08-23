@@ -9,5 +9,6 @@ let
 in
   [
     ./fish
+    ./neovim
     more
   ]

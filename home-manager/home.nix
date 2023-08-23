@@ -59,19 +59,16 @@
     };
   };
 
-  programs.neovim = {
-    enable = true;
-  
+#  programs.neovim = {
+#    enable = true;  
 #    plugins = with pkgs; [
 #      pkgs.vimPlugins.vim-nix
 #      pkgs.vimPlugins.vim-markdown
 #      pkgs.customVim.nvim-treesitter
 #      pkgs.customVim.vim-fish
 #    ];
-
 #    extraConfig = (import ./vim-config.nix) { };
-
-  };
+#  };
 
   programs.gpg.enable = true;
 
