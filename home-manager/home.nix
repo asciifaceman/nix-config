@@ -34,6 +34,9 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    pkgs.jq
+    pkgs.any-nix-shell
+    pkgs.direnv
   ];
 
   programs.git = {
@@ -45,13 +48,43 @@
       cn = "checkout -b";
       ra = "remote add origin";
     };
+    signing = {
+      key = "D33AD0300F3F0057";
+      signByDefault = true;
+    };
+    extraConfig = {
+      init.defaultBranch = "main";
+      push.default = "tracking";
+      github.user = "asciifaceman";
+    };
   };
 
-  programs.nvim = {
+  programs.neovim = {
     enable = true;
+  
+#    plugins = with pkgs; [
+#      pkgs.vimPlugins.vim-nix
+#      pkgs.vimPlugins.vim-markdown
+#      pkgs.customVim.nvim-treesitter
+#      pkgs.customVim.vim-fish
+#    ];
 
+#    extraConfig = (import ./vim-config.nix) { };
 
   };
+
+  programs.gpg.enable = true;
+
+  programs.bash = {
+    enable = true;
+  };
+
+  imports = builtins.concatMap import [
+    ./programs
+  ];
+
+
+
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -81,6 +114,13 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
     EDITOR = "nvim";
+  };
+
+  services.gpg-agent = {
+    enable = true;
+    pinentryFlavor = "tty";
+    defaultCacheTtl = 1200; # 600 = 10 minutes
+    maxCacheTtl = 31536000;
   };
 
   # Let Home Manager install and manage itself.
