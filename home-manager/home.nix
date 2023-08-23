@@ -39,6 +39,7 @@
     pkgs.direnv
   ];
 
+
   programs.git = {
     enable = true;
     userName = "Charles Corbett";
@@ -79,8 +80,6 @@
   imports = builtins.concatMap import [
     ./programs
   ];
-
-
 
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
