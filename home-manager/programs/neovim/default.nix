@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, xdg, ... }:
 
 let
   #custom = pkgs.callPackage ./plugins.nix { };
@@ -18,8 +18,10 @@ in
       pkgs.vimPlugins.vim-markdown
       pkgs.vimPlugins.vim-fish
       pkgs.vimPlugins.YouCompleteMe
+      pkgs.vimPlugins.nvim-tree-lua
     ];
-
+    #extraConfig = lib.fileContents ./init.lua;
   };
+  xdg.configFile.nvim.source = ./nvim;
 }
 
