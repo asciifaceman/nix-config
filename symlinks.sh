@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/run/current-system/sw/bin/bash 
 # Symlink configs to their target directories because
 # I'm afraid of jumping right into the flake configs
 # I see everyone doing
@@ -7,4 +7,4 @@
 #
 #
 
-ln -s home-manager ~/.config/home-manager
+ln -s $(pwd)/home-manager/ ~/.config/home-manager
