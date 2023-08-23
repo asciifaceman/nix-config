@@ -8,3 +8,4 @@
 #
 
 ln -s $(pwd)/home-manager/ ~/.config/home-manager
+sudo ln -s $(pwd)/nixos/ /etc/nixos
