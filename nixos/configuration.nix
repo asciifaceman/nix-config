@@ -84,6 +84,7 @@
   users.users.ccorbett = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
+    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKfPf8/oQMHcdHXhzADLfrjvrXhTH/04YPGXKYkvSyUX asciifaceman" ];
     #packages = with pkgs; [
     #  
     #];

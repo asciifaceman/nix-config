@@ -26,6 +26,7 @@ in
     interactiveShellInit = ''
       eval (direnv hook fish)
       any-nix-shell fish --info-right | source
+      (builtins.readFile ./config.fish)
       "set -g SHELL ${pkgs.fish}/bin/fish"
     '';
 
