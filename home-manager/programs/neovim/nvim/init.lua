@@ -11,6 +11,7 @@ require("nvim-tree").setup({
   },
 })
 
+
 local tab_stop = 2
 
 -- opts
@@ -48,3 +49,14 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+--require('packer').startup(function(use)
+--  use 'wbthomason/packer.nvim'
+--  use 'x-ray/go.nvim'
+--  use 'x-ray/guihua.lua'
+--  use 'nvim-treesitter/nvim-treesitter'
+--  use 'nvim-treesitter/nvim-treesitter-go'
+--
+--end)
+
+--require('go').setup()

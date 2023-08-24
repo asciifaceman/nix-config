@@ -42,6 +42,8 @@
     pkgs.direnv
     pkgs.ripgrep
     pkgs.fd
+    pkgs.lynx
+    pkgs.go
     (pkgs.nerdfonts.override { fonts = [ "3270" "FiraCode" ]; })
   ];
 
@@ -82,7 +84,6 @@
   #
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
-    # EDITOR = "emacs";
     EDITOR = "nvim";
   };
 

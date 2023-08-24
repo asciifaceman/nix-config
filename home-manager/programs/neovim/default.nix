@@ -8,9 +8,12 @@ let
     pkgs.vimPlugins.vim-fish
     pkgs.vimPlugins.YouCompleteMe
     pkgs.vimPlugins.nvim-tree-lua
-    pkgs.vimPlugins.nvim-treesitter
     pkgs.vimPlugins.plenary-nvim
     pkgs.vimPlugins.telescope-nvim
+    pkgs.vimPlugins.nvim-lspconfig
+    pkgs.vimPlugins.nvim-treesitter
+    pkgs.vimPlugins.vim-go
+#    pkgs.vimPlugins.packer-nvim
   ];
 
   nvim_config_source = ./nvim;
