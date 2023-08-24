@@ -10,5 +10,6 @@ in
   [
     ./fish
     ./neovim
+    ./git
     more
   ]

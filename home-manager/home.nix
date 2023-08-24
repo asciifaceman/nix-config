@@ -45,37 +45,6 @@
     (pkgs.nerdfonts.override { fonts = [ "3270" "FiraCode" ]; })
   ];
 
-  programs.git = {
-    enable = true;
-    userName = "Charles Corbett";
-    userEmail = "asciifaceman";
-    aliases = {
-      co = "checkout";
-      cn = "checkout -b";
-      ra = "remote add origin";
-    };
-    signing = {
-      key = "D33AD0300F3F0057";
-      signByDefault = true;
-    };
-    extraConfig = {
-      init.defaultBranch = "main";
-      push.default = "tracking";
-      github.user = "asciifaceman";
-    };
-  };
-
-#  programs.neovim = {
-#    enable = true;  
-#    plugins = with pkgs; [
-#      pkgs.vimPlugins.vim-nix
-#      pkgs.vimPlugins.vim-markdown
-#      pkgs.customVim.nvim-treesitter
-#      pkgs.customVim.vim-fish
-#    ];
-#    extraConfig = (import ./vim-config.nix) { };
-#  };
-
   programs.gpg.enable = true;
 
   programs.bash = {

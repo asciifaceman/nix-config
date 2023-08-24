@@ -38,6 +38,9 @@ vim.opt.autoindent = true
 
 -- key remaps
 
+-- -- NvimTree stuff
+vim.keymap.set('n', '<leader>nt', ":NvimTreeOpen", {})
+vim.keymap.set('n', '<leader>ntc', ":NvimTreeClose", {})
 
 -- -- telescope
 local builtin = require('telescope.builtin')
