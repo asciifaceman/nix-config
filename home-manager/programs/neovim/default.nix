@@ -13,7 +13,6 @@ let
     pkgs.vimPlugins.nvim-lspconfig
     pkgs.vimPlugins.nvim-treesitter
     pkgs.vimPlugins.vim-go
-#    pkgs.vimPlugins.packer-nvim
   ];
 
   nvim_config_source = ./nvim;

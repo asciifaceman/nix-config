@@ -29,6 +29,8 @@
 
 # contains $HOME/go/bin $fish_user_paths; or set -Ua fish_user_paths $HOME/go/bin
 
+set LANG en_US.UTF-8
+
 if isatty
   set -x GPG_TTY (tty)
 end
