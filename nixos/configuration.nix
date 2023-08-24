@@ -82,13 +82,13 @@
   #     tree
   #   ];
   # };
+  programs.fish.enable = true;
+
   users.users.ccorbett = {
     isNormalUser = true;
+    shell = pkgs.fish;
     extraGroups = [ "wheel" ];
     openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKfPf8/oQMHcdHXhzADLfrjvrXhTH/04YPGXKYkvSyUX asciifaceman" ];
-    #packages = with pkgs; [
-    #  
-    #];
   };
   
 
@@ -99,7 +99,6 @@
   #   wget
   # ];
   environment.systemPackages = with pkgs; [
-    neovim
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

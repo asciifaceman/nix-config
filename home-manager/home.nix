@@ -15,6 +15,9 @@
   # release notes.
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
+  # Enable font config?
+  fonts.fontconfig.enable = true;
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
@@ -37,8 +40,10 @@
     pkgs.jq
     pkgs.any-nix-shell
     pkgs.direnv
+    pkgs.ripgrep
+    pkgs.fd
+    (pkgs.nerdfonts.override { fonts = [ "3270" "FiraCode" ]; })
   ];
-
 
   programs.git = {
     enable = true;

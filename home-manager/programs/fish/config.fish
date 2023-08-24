@@ -1,7 +1,7 @@
 
-set -g theme_color_scheme dracula
+#set -g theme_color_scheme dracula
 
-set -U fish_color_normal normal
+#set -U fish_color_normal normal
 #set -U fish_color_command F8F8F2
 #set -U fish_color_quote F1FA8C
 #set -U fish_color_redirection 8BE9FD
@@ -31,6 +31,10 @@ set -U fish_color_normal normal
 
 if isatty
   set -x GPG_TTY (tty)
+end
+
+if not isatty
+  set -g theme_nerd_fonts yes
 end
 
 alias fnix "nix-shell --run fish"
