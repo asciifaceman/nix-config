@@ -44,6 +44,10 @@
     pkgs.fd
     pkgs.lynx
     pkgs.go
+    pkgs.gcc            # YCM
+    pkgs.python311Full  # YCM
+    pkgs.gnumake        # YCM
+    pkgs.cmake          # YCM
     (pkgs.nerdfonts.override { fonts = [ "3270" "FiraCode" ]; })
   ];
 
@@ -71,7 +75,16 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+
+    #".config/nvim/lazy-lock.json".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/mutable/lazy/lazy-lock.json";
+
+    #Mutable.source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/mutable";
+    #Mutable.target = "testMutable/";
   };
+
+#  imports = builtins.concatMap import [
+#    ./programs
+#  ];
 
   # You can also manage environment variables but you will have to manually
   # source
